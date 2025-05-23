@@ -8,237 +8,98 @@
     <link rel="stylesheet" href="archivos/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+    <link rel="stylesheet" href="archivos/css/styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Profile Section -->
-        <header class="profile">
-            <div class="profile-image">
-                <img src="archivos\images\photo profile.jpg" alt="Profile Picture">
+    <!-- MAIN WRAPPER: divides layout into two columns -->
+    <div class="main-layout">
+        <!-- LEFT SIDEBAR: profile and personal info -->
+        <aside class="sidebar">
+            <div class="profile-pic">
+                <img src="archivos/images/photo profile.jpg" alt="Profile Picture" />
             </div>
             <div class="profile-info">
-                <h1>Quispe Guzman Ribeyro Sayder </h1>
+                <h1>Quispe Guzman Ribeyro Sayder</h1>
                 <p class="title">Software Developer</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Arequipa - Perú</p>
+                <p class="location">Arequipa - Perú</p>
                 <div class="social-links">
-                    <a href="mailto:your@email.com" class="matrix-button">
-                        <i class="fas fa-envelope"></i> ribeyro.quispe@tecsup.edu.pe
-                    </a>
-                    <a href="https://github.com/ribeyro" class="matrix-button">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ribeyrosayder/" class="matrix-button">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ribeyrosayder/" class="matrix-button">
-                        <i class="">CV</i>
-                    </a>
+                    <a href="mailto:ribeyro.quispe@tecsup.edu.pe"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ribeyro"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ribeyrosayder/"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-file-alt"></i></a>
                 </div>
-            </div>
-        </header>
+                <div class="about-snippet">
+                    <p>Desarrollador y diseñador de software con una visión clara: convertir ideas en soluciones
+                        tecnológicas innovadoras. Me especializo en sistemas escalables centrados en el usuario.</p>
+                </div>
 
-        <!-- About Section -->
-        <section class="about">
-            <h2>About Me</h2>
-            <p class="matrix-text">Soy Ribeyro, desarrollador y diseñador de software con una visión clara: convertir
-                ideas en soluciones tecnológicas innovadoras que generan impacto real. No solo creo aplicaciones, sino
-                que diseño estrategias que optimizan procesos, mejoran la eficiencia y potencian el crecimiento
-                empresarial.
-            </p>
-            <p>
-                Me especializo en desarrollar soluciones escalables y adaptadas a cada negocio, combinando tecnología
-                avanzada con una comprensión profunda de la experiencia del usuario.
-            </p>
-            <p>
-                Si buscas más que un desarrollador, sino un aliado estratégico en tecnología, hagamos equipo.
-            </p>
+                <div class="contact-card">
+                    <form id="whatsapp-form" class="contact-form">
+                        <h2>Contáctame</h2>
+                        <input type="text" name="name" placeholder="name" required />
+                        <input type="email" name="email" placeholder="email" required />
+                        <input type="tel" name="phone" placeholder="celphone" required />
+                        <textarea name="mensaje" placeholder="Write your message here..." rows="4" required></textarea>
+                        <button type="submit">Enviar solicitud</button>
+                    </form>
 
-        </section>
-
-        <!-- Technologies Section -->
-        <section class="technologies">
-            <h2>Technologies</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="devicon-python-plain"></i>
-                    <span class="icon-spacing"></span>
-                    <span>Python</span>
-                </div>
-                
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="date">2023 - Present</div>
-                    <div class="content">
-                        <h3>Company Name</h3>
-                        <p class="role">Position</p>
-                        <p class="description">Description of your role...</p>
-                    </div>
-                </div>
-                <!-- Add more experience items -->
-                <div class="timeline-item">
-                    <div class="date">2023 - Present</div>
-                    <div class="content">
-                        <h3>Company Name</h3>
-                        <p class="role">Position</p>
-                        <p class="description">Description of your role...</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">2023 - Present</div>
-                    <div class="content">
-                        <h3>Company Name</h3>
-                        <p class="role">Position</p>
-                        <p class="description">Description of your role...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more project cards -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Project description...</p>
-                        <div class="project-links">
-                            <a href="#" class="matrix-button">Demo</a>
-                            <a href="#" class="matrix-button">Code</a>
-                        </div>
-                    </div>
                 </div>
 
             </div>
-        </section>
+        </aside>
 
-        <!-- Education Section -->
-        <section class="education">
-            <h2>Education</h2>
-            <div class="education-items">
-                <div class="education-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="education-info">
-                        <h3>Tecsup</h3>
-                        <p>Degree • Year</p>
-                    </div>
-                </div>
-                <!-- Add more education items -->
-            </div>
-        </section>
+        <!-- RIGHT MAIN CONTENT: sections -->
+        <main class="main-content">
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#technologies">Technologies</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#extra">Extra</a>
+            </nav>
 
-        <!-- Extra Section -->
-        <section class="extra">
-            <h2>Extra</h2>
-            <div class="gallery">
-                <!-- Add your images here -->
-            </div>
-        </section>
+            <section id="about" class="section">
+                <!-- About content here -->
+                <h2>About Me</h2>
+            </section>
+
+            <section id="technologies" class="section">
+                <h2>Technologies</h2>
+                <!-- Tech content here -->
+            </section>
+
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+                <!-- Experience content here -->
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <!-- Projects content here -->
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <!-- Education content here -->
+            </section>
+
+            <section id="extra" class="section">
+                <h2>Extra</h2>
+                <!-- Extras here -->
+            </section>
+            <footer class="footer">
+                <p>&copy; 2025 Ribeyro Sayder • Software Developer</p>
+            </footer>
+
+        </main>
+
     </div>
 
     <link rel="stylesheet" href="archivos/css/styles.css">
+    <script src="archivos/js/script.js"></script>
+
 </body>
 
 </html>

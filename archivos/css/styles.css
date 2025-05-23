@@ -1,159 +1,276 @@
-/* styles.css */
 :root {
-    --matrix-green: #7ed17e;
-    --matrix-dark: #0a0a0a;
-    --matrix-light: #1a1a1a;
-    --text-color: #ffffff;
+  --matrix-green: #7ed17e; /* Verde principal tipo "Matrix" para bordes, botones, y títulos */
+  --matrix-dark: #0a0a0a; /* Fondo general del sitio, muy oscuro */
+  --matrix-light: #1a1a1a; /* Fondo secundario para secciones, ligeramente más claro */
+  --text-color: #ffffff; /* Color de texto base en blanco */
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--matrix-dark);
-    color: var(--text-color);
-    font-family: 'Courier New', monospace;
-    line-height: 1.6;
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  padding: 0; /* Elimina padding por defecto */
+  background-color: var(--matrix-dark); /* Aplica el fondo oscuro general */
+  color: var(--text-color); /* Establece el color del texto como blanco */
+  font-family: "Courier New", monospace; /* Fuente monoespaciada estilo consola */
+  line-height: 1.6; /* Espaciado vertical entre líneas */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Layout principal en columnas */
+.main-layout {
+  display: flex; /* Flexbox para dividir layout en dos columnas: sidebar y contenido */
+  min-height: 100vh; /* Asegura que el layout ocupe al menos toda la altura de la ventana */
+  padding-top: 20px; /* Espaciado superior opcional */
 }
 
-/* Profile Styles */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+/* Barra lateral fija (columna izquierda) */
+.sidebar {
+  width: 280px; /* Ancho fijo del sidebar */
+  background-color: var(--matrix-dark); /* Mismo fondo que el body */
+  color: var(--text-color); /* Texto blanco */
+  padding: 1rem 2rem; /* Espaciado interno vertical y horizontal */
+  border-right: 1px solid var(--matrix-green); /* Línea divisoria a la derecha */
+  display: flex; /* Flex para acomodar el contenido interno */
+  flex-direction: column; /* Acomoda los hijos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  position: fixed; /* Sidebar fijo al hacer scroll */
+  top: 0; /* Pegado arriba */
+  left: 0; /* Pegado a la izquierda */
+  bottom: 0; /* Ocupa toda la altura de la pantalla */
+  overflow-y: auto; /* Permite scroll si el contenido sobrepasa */
+  z-index: 999; /* Asegura que esté sobre otros elementos */
 }
 
-.profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid var(--matrix-green);
+.profile-pic img {
+  width: 120px; /* Ancho de la imagen */
+  height: 120px; /* Alto de la imagen */
+  border-radius: 50%; /* Imagen redonda */
+  border: 2px solid var(--matrix-green); /* Borde verde tipo matrix */
+  margin-bottom: 1rem; /* Espacio inferior */
+}
+
+.profile-info {
+  text-align: center; /* Centra el texto dentro del contenedor */
 }
 
 .profile-info h1 {
-    margin: 0;
-    color: var(--matrix-green);
-    font-size: 2.5rem;
+  font-size: 1.2rem; /* Tamaño de fuente */
+  color: var(--matrix-green); /* Color verde matrix */
+  margin: 0.5rem 0; /* Margen vertical */
 }
 
-.matrix-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    border: 1px solid var(--matrix-green);
-    color: var(--matrix-green);
-    text-decoration: none;
-    margin: 0.5rem;
-    transition: all 0.3s ease;
-    border-radius: 30px;
+.profile-info .title,
+.profile-info .location {
+  font-size: 0.9rem; /* Texto más pequeño */
+  margin: 0.25rem 0; /* Margen vertical más compacto */
+  color: var(--text-color); /* Color blanco */
 }
 
-.matrix-button:hover {
-    background-color: var(--matrix-green);
-    color: var(--matrix-dark);
+.about-snippet p {
+  font-size: 0.85rem; /* Tamaño reducido para el resumen */
+  margin-top: 1rem; /* Espacio superior respecto al elemento anterior */
+  color: var(--text-color); /* Texto blanco */
 }
 
-/* Section Styles */
-section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: var(--matrix-light);
-    border: 0px solid var(--matrix-green);
+/* Íconos sociales */
+.social-links {
+  display: flex; /* Alineación horizontal de íconos */
+  gap: 10px; /* Espacio entre íconos */
+  justify-content: center; /* Centra los íconos horizontalmente */
+  margin-top: 0.5rem; /* Espacio superior */
 }
 
-h2 {
-    color: var(--matrix-green);
-    border-bottom: 2px solid var(--matrix-green);
-    padding-bottom: 0.5rem;
+.social-links a {
+  color: var(--matrix-green); /* Íconos verdes */
+  font-size: 1.1rem; /* Tamaño mediano */
+  transition: color 0.3s; /* Suaviza el cambio de color al pasar el cursor */
 }
 
-.icon-spacing {
-    display: block;
-    margin-top: 10px; /* Ajusta según necesites */
+.social-links a:hover {
+  color: #ffffff; /* Cambia a blanco cuando el cursor pasa encima */
 }
-.tech-item i {
-    font-size: 2rem; /* Ajusta el tamaño que desees */
-}
-
-/* Technologies Grid */
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    
-}
-
-.tech-item {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid var(--matrix-green);
-    border-radius: 40px;
-    background-color: var(--matrix-dark);
+.contact-card {
+  background-color: var(
+    --matrix-light
+  ); /* Fondo oscuro suave que se diferencia del fondo general */
+  padding: 1.5rem 1.5rem; /* Espacio interno: 2rem arriba/abajo y 1.5rem a los lados */
+  border-radius: 16px; /* Esquinas redondeadas para un diseño moderno */
+  box-shadow: 0 8px 30px rgba(126, 209, 126, 0.1); /* Sombra externa suave con color verdoso translúcido */
+  max-width: 220px; /* Ancho máximo del contenedor (ideal para móviles y tablets) */
+  width: 100%; /* Ocupará todo el ancho disponible hasta los 280px */
+  margin: 2rem auto; /* Separación vertical de 2rem, centrado horizontal con `auto` */
+  text-align: center; /* Centra el contenido dentro del contenedor */
+  transition: transform 0.3s ease; /* Animación suave cuando cambia la transformación (hover) */
 }
 
-/* Timeline */
-.timeline {
-    position: relative;
-    padding-left: 2rem;
+.contact-card:hover {
+  transform: translateY(
+    -10px
+  ); /* Eleva la tarjeta ligeramente como efecto visual */
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 1rem;
+.contact-form {
+  display: flex; /* Usa Flexbox para organizar internamente los elementos */
+  flex-direction: column; /* Coloca los inputs uno debajo del otro (verticalmente) */
+  gap: 0.75rem; /* Espacio vertical entre inputs/botón */
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2rem;
-    width: 1px;
-    height: 100%;
-    background-color: var(--matrix-green);
+.contact-form h2 {
+  margin-top: 0;
+  color: var(--matrix-green);
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+  text-align: center;
 }
 
-/* Project Grid */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.contact-form input,
+.contact-form button {
+  width: 100%; /* Cada input y botón ocupa todo el ancho de su contenedor */
+  box-sizing: border-box; /* asegura que padding y border no sobresalgan */
+  display: block; /* evita comportamiento inline del file input */
+  padding: 0.75rem; /* Espaciado interno cómodo para mejor interacción */
+  font-size: 0.9rem; /* Tamaño de texto ligeramente menor al normal */
+  border-radius: 8px; /* Bordes redondeados para estética moderna */
+  border: 1px solid var(--matrix-green); /* Borde verde Matrix alrededor */
+  background-color: transparent; /* Sin fondo por defecto (para usar el fondo del contenedor) */
+  color: var(--text-color); /* Texto blanco */
+  transition: border 0.3s ease, background-color 0.3s ease; /* Animación suave al enfocar */
 }
 
-.project-card {
-    border: 1px solid var(--matrix-green);
-    overflow: hidden;
+.contact-form input::placeholder {
+  color: #bbbbbb; /* Color gris claro para el texto de ayuda dentro del input */
 }
 
-.project-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.contact-form input:focus {
+  outline: none; /* Quita el contorno azul por defecto del navegador */
+  border-color: #aaffaa; /* Resalta el borde con un verde más claro */
+  background-color: #121212; /* Le da un fondo más notorio al input enfocado */
 }
 
-.project-info {
-    padding: 1rem;
+.contact-form textarea {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 0.75rem; /* Espaciado interno */
+  font-size: 0.9rem; /* Tamaño de texto coherente con inputs */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid var(--matrix-green); /* Borde verde Matrix */
+  background-color: transparent; /* Fondo transparente */
+  color: var(--text-color); /* Texto blanco */
+  resize: vertical; /* Permite al usuario redimensionar verticalmente */
+  transition: border 0.3s ease, background-color 0.3s ease; /* Transición suave */
+  box-sizing: border-box; /* Incluye padding dentro del width */
 }
 
-/* Matrix Text Effect */
-.matrix-text {
-    position: relative;
-    overflow: hidden;
+.contact-form textarea::placeholder {
+  color: #bbbbbb; /* Color tenue para el texto de ayuda */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
+.contact-form textarea:focus {
+  outline: none; /* Elimina el borde azul por defecto */
+  border-color: #aaffaa; /* Borde verde más claro al enfocar */
+  background-color: #121212; /* Fondo oscuro al hacer focus */
+}
 
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
+.contact-form button {
+  background-color: var(--matrix-green); /* Botón con fondo verde Matrix */
+  color: var(--matrix-dark); /* Texto oscuro para contraste en fondo claro */
+  font-weight: bold; /* Texto más grueso para mejor visibilidad */
+  cursor: pointer; /* Cambia el cursor a "mano" al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animaciones suaves para hover */
+}
+
+.contact-form button:hover {
+  background-color: #9ef49e; /* Verde más claro al pasar el cursor */
+  transform: scale(1.02); /* Efecto de crecimiento leve para atraer atención */
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: var(--matrix-light);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close-modal {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Contenido principal (columna derecha) */
+.main-content {
+  margin-left: 300px; /* Deja espacio para el sidebar fijo */
+  padding: 0rem 4rem; /* Padding interno horizontal y vertical */
+  flex: 1; /* Ocupa el resto del espacio disponible */
+}
+
+/* Navbar superior */
+.navbar {
+  position: sticky; /* Hace que el navbar se quede fijo dentro del scroll del main */
+  top: 0; /* Se pegará al borde superior cuando llegue a esa posición */
+  z-index: 10; /* Asegura que se muestre por encima de otros elementos */
+  background-color: var(
+    --matrix-dark
+  ); /* Fondo para cubrir cualquier texto que pase por debajo */
+  padding: 1rem 0; /* Espaciado adicional si lo deseas */
+  display: flex; /* Flexbox para alinear horizontalmente los enlaces */
+  gap: 1rem; /* Espacio entre enlaces */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben */
+  justify-content: center; /* Centra horizontalmente */
+  margin-bottom: 1rem; /* Espacio con el resto del contenido */
+}
+
+.navbar a {
+  padding: 6px 10px; /* Espaciado interno del botón */
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid var(--matrix-green); /* Borde verde */
+  color: var(--matrix-green); /* Texto verde */
+  border-radius: 4px; /* Bordes suavizados */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  text-decoration: none; /* Quita subrayado de los enlaces */
+  transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+.navbar a:hover {
+  background-color: var(
+    --matrix-green
+  ); /* Cambia el fondo al pasar el cursor */
+  color: var(--matrix-dark); /* Cambia el texto a oscuro */
+}
+
+/* Secciones de contenido */
+.section {
+  background-color: var(--matrix-light); /* Fondo oscuro medio */
+  padding: 1.5rem; /* Espaciado interno */
+  margin-bottom: 2rem; /* Espacio entre secciones */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid rgba(126, 209, 126, 0.2); /* Borde tenue en verde */
+  scroll-margin-top: 80px; /* Espacio al hacer scroll (para que no quede detrás del navbar) */
+}
+
+.section h2 {
+  color: var(--matrix-green); /* Título verde */
+  border-bottom: 2px solid var(--matrix-green); /* Línea inferior en verde */
+  padding-bottom: 0.5rem; /* Espacio bajo el texto antes de la línea */
+}
+
+/* Footer */
+.footer {
+  text-align: center; /* Centra el contenido */
+  padding: 1rem; /* Espaciado interno */
+  color: var(--matrix-green); /* Texto verde */
+  background-color: var(--matrix-dark); /* Fondo oscuro */
+  border-top: 1px solid var(--matrix-green); /* Línea superior verde */
+  margin-top: 2rem; /* Espacio antes del footer desde el contenido anterior */
 }
